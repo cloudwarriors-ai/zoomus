@@ -36,6 +36,7 @@ COMPONENT_CLASSES = {
         "room": components.room.RoomComponentV2,
         "user": components.user.UserComponentV2,
         "webinar": components.webinar.WebinarComponentV2,
+        "contact_center": components.contact_center.ContactCenterComponentV2,
     },
 }
 
