@@ -11,7 +11,12 @@ class ContactCenterComponentV2(base.BaseComponent):
     def queues_list(self, **kwargs):
         return self.get_request("/contact_center/queues", params=kwargs)
 
-    
+    def queues_update(self, **kwargs):
+        
+        util.require_keys(kwargs, "queue_id")
+        print("updating contact center")
+
+        return self.patch_request("/contact_center/queues/{}".format(kwargs.get("queue_id")), data=kwargs)
     
     
     def queues_add(self, **kwargs):
