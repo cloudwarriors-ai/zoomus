@@ -7,6 +7,16 @@ from zoomus.components import base
 
 
 class PhoneComponentV2(base.BaseComponent):
+    
+    def sites(self, **kwargs):
+
+        print("calling sites", kwargs)
+        
+        for key, value in kwargs.items():
+            print(f"{key} = {value}")
+
+        return self.post_request("/phone/sites", data=kwargs)
+
     def numbers_list(self, **kwargs):
         return self.get_request("/phone/numbers", params=kwargs)
 
