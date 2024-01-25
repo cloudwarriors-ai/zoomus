@@ -66,6 +66,16 @@ class ContactCenterComponentV2(base.BaseComponent):
     def dispositions_set_list(self, **kwargs):
         return self.get_request("/contact_center/dispositions/sets")
     
+    def flows_list(self, **kwargs):
+        return self.get_request("/contact_center/flows")
+    
+    def inbox_list(self, **kwargs):
+        return self.get_request("/contact_center/inbox", params=kwargs)
+    
+    def waiting_room_list(self, **kwargs):
+        return self.get_request("/contact_center/waiting_room", params=kwargs)
+    
+    
 
 
     
