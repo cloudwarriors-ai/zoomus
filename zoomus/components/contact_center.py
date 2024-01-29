@@ -18,7 +18,7 @@ class ContactCenterComponentV2(base.BaseComponent):
     def queues_update(self, **kwargs):
         
         util.require_keys(kwargs, "queue_id")
-        print("updating contact center")
+        print("updating contact center queues")
 
         return self.patch_request("/contact_center/queues/{}".format(kwargs.get("queue_id")), data=kwargs)
     
@@ -67,7 +67,7 @@ class ContactCenterComponentV2(base.BaseComponent):
         return self.get_request("/contact_center/dispositions/sets")
     
     def flows_list(self, **kwargs):
-        return self.get_request("/contact_center/flows")
+        return self.get_request("/contact_center/flows", params=kwargs)
     
     def inbox_list(self, **kwargs):
         return self.get_request("/contact_center/inbox", params=kwargs)
