@@ -89,4 +89,13 @@ class PhoneComponentV2(base.BaseComponent):
         
         return self.put_request("/phone/call_queues/{}/manager".format(value), data=kwargs)
     
+    def site_list(self, **kwargs):
+
+        print("calling site list", kwargs)
+        
+        for key, value in kwargs.items():
+            print(f"{key} = {value}")
+
+        return self.get_request("/phone/sites", params=kwargs)
+    
     
