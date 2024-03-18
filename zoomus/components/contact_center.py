@@ -70,7 +70,7 @@ class ContactCenterComponentV2(base.BaseComponent):
         return self.get_request("/contact_center/flows", params=kwargs)
     
     def inbox_list(self, **kwargs):
-        return self.get_request("/contact_center/inbox", params=kwargs)
+        return self.get_request("/contact_center/inboxes", params=kwargs)
     
     def waiting_room_list(self, **kwargs):
         return self.get_request("/contact_center/waiting_room", params=kwargs)
