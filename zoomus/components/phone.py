@@ -8,8 +8,8 @@ from zoomus.components import base
 
 class PhoneComponentV2(base.BaseComponent):
     
-    def common_area_extension_id(self):
-        return self.get_request("/phone/common_areas")
+    def common_area_extension_id(self,**kwargs):
+        return self.get_request("/phone/common_areas", params=kwargs)
         
     def sites(self, **kwargs):
 
